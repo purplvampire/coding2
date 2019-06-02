@@ -12,8 +12,9 @@ pdfWriter.addPage(minutesFirstPage)
 for pageNum in range(1, pdfReader.numPages):
     pageObj = pdfReader.getPage(pageNum)
     pdfWriter.addPage(pageObj)
-# Create PDF File
-resultPdfFile = open('watermarkedCover.pdf', 'wb')
+# Create PDF File and Encrypt
+resultPdfFile = open('watermarkedCover2.pdf', 'wb')
+pdfWriter.encrypt('1234')
 pdfWriter.write(resultPdfFile)
 # Close PDF File
 resultPdfFile.close()
